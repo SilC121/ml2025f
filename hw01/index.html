@@ -38,6 +38,24 @@
       padding: 2px 8px;
   }
 
+  .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
+  border: 1px solid #f9eced; 
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
   .flipswitch
   {
       position: relative;
@@ -153,7 +171,7 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      這次的作業是使用 3D Slicer 進行心臟標記。起初我以為這項任務應該相當簡單，很快就能完成且標記得十分精準。但實際操作後才發現並沒有想像中容易，不僅需要反覆進行相同的動作，隨著標記的進行，也越來越難判斷哪些部位屬於心臟肌肉。這讓我想起老師在課堂上提過的一句話「訓練資料集往往比模型本身更重要。」 畢竟製作高品質的資料集確實是個既耗時又費力的過程。
     </div>
   </div>
 
@@ -169,22 +187,27 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>4</td>
-          <td>Simple baseline - 描述</td>
+          <td>Simple baseline - 使用 3D Slicer 內建基本功能(比如上課時教的三標籤法、閥值法、球型筆刷法、筆刷、剪刀、邏輯計算等)，進行手動心臟肌肉標註。 <br>
+            錄影後上傳YouTube(或是直播到YouTube)，影片時間超過一小時。
+          </td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"checked></td>
           <td id='m2'>4</td>
-          <td>Medium baseline - 描述</td>
+          <td>Medium baseline - 使用 3D Slicer 內建基本功能(比如上課時教的三標籤法、閥值法、球型筆刷法、筆刷、剪刀、邏輯計算等)，進行手動心臟肌肉標註。 <br>
+          錄影後上傳YouTube(或是直播到YouTube)，影片時間超過三小時。</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述</td>
+          <td>Strong baseline - 匯出標註好的心臟 nii.gz 檔。 <br>
+          Dice-Sørensen coefficient 分數，介於全班前20名。(1pt) <br>
+          Dice-Sørensen coefficient 分數，介於全班前10名。(1pt)</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
           <td id='m4'>-10</td>
           <td>沒有寫100字心得</td>
         </tr>
@@ -196,19 +219,22 @@
   <!-- ------------------------------------------------>
   <div class="row hw12 bottomrow">
     <div class="col-md-12 twenty">
-        <iframe width="100%" height="560" src="https://www.youtube.com/watch?v=jF9O-7lFXl8&t=11685s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+      <div class="video-container">
+      <iframe src="https://www.youtube.com/watch?v=jF9O-7lFXl8&t=11685s"title="YouTube video player"allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
- <div class="row hw12 bottomrow">
-    <div class="col-md-12 twenty">
-       標註檔連結: 
-       <a href="https://github.com/meimei-lin/ml2025f/raw/refs/heads/main/hw01/110590041.seg.nrrd" download="">
-      https://github.com/meimei-lin/ml2025f/raw/refs/heads/main/hw01/110590041.seg.nrrd
+<div class="row hw12 bottomrow">
+  <div class="col-md-12 twenty">
+    標註檔連結: 
+    <a href="https://github.com/SilC121/ml2025f/raw/refs/heads/main/hw01/110590041.seg.nrrd" download>
+      https://github.com/SilC121/ml2025f/raw/refs/heads/main/hw01/110590041.seg.nrrd
     </a>
-    </div>
   </div>
+</div>
+
   <!-- ------------------------------------------------>
 
 
@@ -224,9 +250,6 @@
   d3.select("#myCheckbox2").on("change",update);
   d3.select("#myCheckbox3").on("change",update);
   d3.select("#myCheckbox4").on("change",update);
-  // d3.select("#myCheckbox5").on("change",update);
-  // d3.select("#myCheckbox6").on("change",update);
-  // d3.select("#myCheckbox7").on("change",update);
 
   update();
   
@@ -257,5 +280,4 @@
 
 </body>
 </html>
-
 
