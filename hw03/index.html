@@ -146,15 +146,14 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <h1>作業 03</h1>
+      <h1>作業 02</h1>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
-    </div>
+      本次實驗旨在比較 3D U-Net 與 Attention U-Net 在醫療影像分割任務中的表現。由於這是我首次接觸三維影像分割模型，因此整個實作流程包含大量環境設定與參數調整。訓練過程使用 Google Colab 平台，雖然該平台提供免費 GPU 資源，但在實際使用中仍面臨套件版本不一致、連線中斷等問題。透過多次嘗試，我逐步熟悉模型架構與 Colab 的限制，並建立了完整的訓練流程。此次經驗讓我更理解深度學習實驗環境的重要性與雲端資源的侷限。
   </div>
 
   <!-- ------------------------------------------------>
@@ -169,22 +168,22 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>4</td>
-          <td>Simple baseline - 描述</td>
+          <td>Simple baseline - 完成colab baseline的推論並上傳至競賽網頁</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"checked></td>
           <td id='m2'>4</td>
-          <td>Medium baseline - 描述</td>
+          <td>Medium baseline - 使用HW2 Medium baseline訓練出來的權重檔推論50筆資料並上傳至競賽網頁</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述</td>
+          <td>Strong baseline - 使用HW2 Strong Baseline訓練出來的權重檔對patient0051做推論</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
           <td id='m4'>-10</td>
           <td>沒有寫100字心得</td>
         </tr>
@@ -196,13 +195,38 @@
   <!-- ------------------------------------------------>
   <div class="row hw12 bottomrow">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+      <!-- <iframe width="100%" height="560" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+      <table>
+        <tr>
+          <td> Simple Baseline 分數圖片
+          <img src="機械學習_HW3_SP_BL
+.png" width="100%" height="560">
+        </tr>
+        <tr>
+          <td> Medium Baseline 分數圖片
+          <img src="機械學習_HW3_MD_BL
+.png" width="100%" height="560">
+        </tr>
+      </table>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
+<div class="row hw12 bottomrow">
+  <div class="col-md-12 twenty">
+    Strong Baseline colab連結: 
+    <a href="https://colab.research.google.com/drive/1kvQTwRpe5LJsmUZBUGJEIs9dk47NKO1U?usp=sharing">
+      https://colab.research.google.com/drive/1kvQTwRpe5LJsmUZBUGJEIs9dk47NKO1U?usp=sharing
+    </a>
+    <table>
+      <tr>
+        <td> Strong Baseline Dice分數圖片 使用了attention_unet
+        <img src="strong.png" width="100%" height="560">
+      </tr>
+    </table>
+  </div>
+</div>
 
   <!-- ------------------------------------------------>
 
